@@ -1,4 +1,5 @@
 <template>
+    <LogoComponent></LogoComponent>
   <template :key="index" v-for="(log, index) in logs">
     <LineComponent></LineComponent>
   </template>
@@ -6,11 +7,13 @@
 
 <script>
 import LineComponent from './LineComponent.vue';
+import LogoComponent from './LogoComponent.vue';
 
 export default {
   name: 'MainComponent',
   components: {
-    LineComponent
+    LineComponent,
+    LogoComponent
   },
   data() {
     return {

@@ -1,5 +1,5 @@
 <template>
-  <div id="contatiner">
+  <div id="contatiner" :key="index" v-for="(component, index) in main">
     <MainComponent></MainComponent>
   </div>
 </template>
@@ -14,7 +14,7 @@ export default {
   },
   data() {
     return {
-
+      main : []
     };
   },
   setup() {
@@ -24,13 +24,16 @@ export default {
 
   },
   mounted() {
-    
+    setTimeout(this.pushLine,1500);
   },
   unmounted() {
   
   },
   methods: {
-
+    async pushLine() {
+      let line = MainComponent;
+      this.main.push(line);
+    }
   },
   watch:{
 
